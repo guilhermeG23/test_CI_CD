@@ -55,7 +55,7 @@ function filter_file($filter, $file, $descr) {
 }
 
 function process_files() {
-	$files = glob('/root/*');
+	$files = glob('*');
 
 	foreach ($files as $file) {
 		if (!preg_match('/\.(php|inc)$/', $file)) {
