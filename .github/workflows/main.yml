@@ -1,0 +1,16 @@
+name: Test struct PHP Files
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Added PHP
+      run: |
+        apt update
+        apt install -y php8.3
