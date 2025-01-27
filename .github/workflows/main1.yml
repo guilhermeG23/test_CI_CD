@@ -1,0 +1,18 @@
+name: Testar a estrutura dos arquivos php
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copiar repo para dentro da VM
+      uses: actions/checkout@v3
+    - name: Instalar pacotes
+      run: |
+        apt update
+        apt install -y php8.3
+    - name: Executar ação
+      run: php syntax_analysis.php
